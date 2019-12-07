@@ -18,7 +18,7 @@ export default function RouteWrapper({
     return <Redirect to="/" />;
   }
 
-  if (signed && isPrivate) {
+  if (signed && !isPrivate) {
     return <Redirect to="/dashboard" />;
   }
 
