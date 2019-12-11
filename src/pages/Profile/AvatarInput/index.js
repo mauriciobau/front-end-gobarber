@@ -12,15 +12,16 @@ export default function AvatarInput() {
 
   const ref = useRef();
 
-  // useEffect(() => {
-  //   if (ref.current) {
-  //     registerField({
-  //       name: 'avatar_id',
-  //       ref: ref.current,
-  //       path: 'dataset.file',
-  //     });
-  //   }
-  // }, [ref, registerField]);
+  useEffect(() => {
+    if (ref.current) {
+      registerField({
+        name: 'avatar_id',
+        ref: ref.current,
+        path: 'dataset.file',
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ref]);
 
   async function handleChange(e) {
     const data = new FormData();
